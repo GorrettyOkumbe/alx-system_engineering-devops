@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # kills the process 7-highlander
 
-kill -9 "bash ./7-highlander" -f
+pkill -9 "bash ./7-highlander" -f
