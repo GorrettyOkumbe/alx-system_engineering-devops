@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# creats a file
+# Displays To infinity and beyond indefinitely
+# Displays I hate the kill command when receiving a SIGTERM signal
+# Displays Y U no love me?! when receiving a SIGINT signal
+# Deletes the file /var/run/myscript.pid and terminates itself
+# whenreceiving a SIGQUIT or SIGTERM signal
+
+# creating file
+finsher () {
+		   rm /var/run/holbertonscript.pid
+			   exit
+			   
+}
+
+echo "$$" > /var/run/holbertonscript.pid
+
+# dispaly infinate text
+while ((1))
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "Y U no love me?!"' SIGINT
+	trap 'echo "I hate the kill command" && finsher' SIGTERM
+	trap 'finsher' SIGQUIT 
+done
