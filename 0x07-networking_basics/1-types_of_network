@@ -5,6 +5,6 @@
 # 3.What network do you use when you browse www.google.com from your
 # smartphone (not connected to the Wifi)
 
-3
-2
-1
+echo "3"
+echo "2"
+echo "1"
