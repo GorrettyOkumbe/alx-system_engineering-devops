@@ -11,3 +11,4 @@ file_line {'set identity file':
 	path => '/etc/ssh/ssh_config',
 	match => '^IdentityFile',
 	line => 'IdentityFile ~/.ssh/school',
+}
