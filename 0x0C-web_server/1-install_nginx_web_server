@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# install nginx
-sudo apt-get -y install software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-1.8
-sudo apt-get -y update
-sudo apt-get -y install haproxy
+# Install nginx --> engine x
 
-sudo sed -i -e '$aENABLED=1\n' /etc/default/haproxy 
-sudo sed -i -e '$a\listen http-in\n\tbind :80\n\tbalance roundrobin\n\tserver 20927-web-01 3.238.250.8:80 check\n\tserver 20927-web-02 18.208.186.172:80 check\n' /etc/haproxy/haproxy.cfg
-sudo service haproxy restart
+sudo apt update
+sudo apt install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chmod -R 755 /var/www
+echo "Hello World!" > /var/www/html/index.html
+sudo service nginx restart
