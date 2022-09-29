@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Enable nginx to listen on port 80
+sudo service apache2 stop
 sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
